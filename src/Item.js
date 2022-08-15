@@ -1,9 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export default function Item(props) {
-  const [total, setTotal] = useState(0);
+  const [total, setTotal] = useState(() => {
+    const total = localStorage.getItem("total")
+    if (!total) {
+      return 0
+    }
+    return Number.parseInt(total, 10)
+  });
 
   const { info } = props;
+
+  useEffect(()=>{
+    localStorage.setItem("total",total)
+    console.log(localStorage)
+  },[total])
 
   function handleAddClick() {
     setTotal(total + 1);
