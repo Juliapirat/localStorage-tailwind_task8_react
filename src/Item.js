@@ -24,7 +24,7 @@ export default function Item(props) {
       <div 
       className="flex items-stretch "
       >
-        <h2 className="ml-2">{info.name}</h2>
+        <h2 className="mr-4">{info.name}</h2>
         <p>{info.desc}</p>
       </div>
       <div className="flex items-stretch space-x-2 my-4">
